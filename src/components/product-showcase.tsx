@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const steps = [
   {
@@ -9,6 +10,8 @@ const steps = [
     description:
       "Define your campaign objectives, target audience, and channels. Our AI recommends optimal tactics and budget allocation based on your goals and historical performance data.",
     screenshotLabel: "Campaign Creation View",
+    screenshot: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.04%E2%80%AFPM-RiWjbJsace0PK0u5rWdfTH8SZMdjEO.jpeg",
+    screenshotAlt: "New Campaign creation form showing fields for campaign name, description, budget, target audience, dates, channel selection, and messaging document link",
   },
   {
     step: "02",
@@ -16,6 +19,8 @@ const steps = [
     description:
       "Submit campaigns for review through configurable approval chains. Stakeholders get clear visibility into what's pending, with inline comments and one-click approvals.",
     screenshotLabel: "Approval Workflow View",
+    screenshot: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.45%E2%80%AFPM-eUty4VXW1VyrU4CRvvV7qJR9OREdcQ.jpeg",
+    screenshotAlt: "Approval Status panel showing Product Marketing and Campaign Manager as Complete, with CMO/VP Marketing as the Current approval stage",
   },
   {
     step: "03",
@@ -23,6 +28,8 @@ const steps = [
     description:
       "Monitor cross-channel performance from a unified dashboard. AI surfaces insights and recommendations so you can adapt campaigns while they're live.",
     screenshotLabel: "Analytics Dashboard View",
+    screenshot: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.46%E2%80%AFPM-dvFSoyQ3HgwyNMWv5g2yWtvsfqcuQx.jpeg",
+    screenshotAlt: "Dashboard overview showing Total Campaigns, Pending Approval, and Approved stats with an Awaiting Your Approval section featuring the Q1 Product Launch Campaign",
   },
 ];
 
@@ -80,14 +87,26 @@ export const ProductShowcase = () => {
                       <div className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
                       <div className="h-2.5 w-2.5 rounded-full bg-green-400" />
                     </div>
-                    <div className="aspect-[16/10] rounded-b-lg bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                      <div className="text-center text-gray-500">
-                        <p className="text-sm">{item.screenshotLabel}</p>
-                        <p className="text-xs text-gray-600 mt-1">
-                          Replace with screenshot
-                        </p>
+                    {item.screenshot ? (
+                      <div className="rounded-b-lg overflow-hidden">
+                        <Image
+                          src={item.screenshot}
+                          alt={item.screenshotAlt || item.screenshotLabel}
+                          width={1024}
+                          height={1024}
+                          className="w-full h-auto rounded-b-lg"
+                        />
                       </div>
-                    </div>
+                    ) : (
+                      <div className="aspect-[16/10] rounded-b-lg bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                        <div className="text-center text-gray-500">
+                          <p className="text-sm">{item.screenshotLabel}</p>
+                          <p className="text-xs text-gray-600 mt-1">
+                            Replace with screenshot
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
