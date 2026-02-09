@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
+import Image from "next/image";
 
 export const Hero = () => {
   return (
@@ -77,17 +78,16 @@ export const Hero = () => {
                   </div>
                 </div>
               </div>
-              {/* Screenshot placeholder */}
-              <div className="aspect-[16/10] rounded-b-lg bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-xl bg-gray-800 border border-gray-700">
-                    <span className="text-2xl font-bold text-primary">CH</span>
-                  </div>
-                  <p className="text-sm">Dashboard Screenshot</p>
-                  <p className="text-xs text-gray-600 mt-1">
-                    Replace with your app screenshot
-                  </p>
-                </div>
+              {/* Product screenshot */}
+              <div className="rounded-b-lg overflow-hidden">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.03%E2%80%AFPM-muNf1HQ2vv18QQ28dtqW25vtymt7YU.jpeg"
+                  alt="CampaignHub dashboard showing Q1 Product Launch Campaign with tactics, budget details, approval workflow, and campaign details"
+                  width={1400}
+                  height={875}
+                  className="w-full h-auto rounded-b-lg"
+                  priority
+                />
               </div>
             </div>
             {/* Floating accent elements */}
