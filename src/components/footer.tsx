@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const footerLinks = [
   { label: "Privacy", href: "#" },
   { label: "Terms", href: "#" },
@@ -10,13 +12,14 @@ export const Footer = () => {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-white font-bold text-xs">
-              CH
-            </div>
-            <span className="text-sm font-semibold text-foreground">
-              CampaignHub
-            </span>
+          <div className="flex items-center">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.56%E2%80%AFPM-JD3RT0F6to7pICwUJFfIuU8hN78BUY.jpeg"
+              alt="Sequence"
+              width={140}
+              height={35}
+              className="h-7 w-auto"
+            />
           </div>
 
           {/* Links */}
@@ -34,7 +37,7 @@ export const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted">
-            © {new Date().getFullYear()} CampaignHub. All rights reserved.
+            © {new Date().getFullYear()} Sequence. All rights reserved.
           </p>
         </div>
       </div>
