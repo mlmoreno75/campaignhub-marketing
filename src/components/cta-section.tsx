@@ -37,7 +37,9 @@ export const CTASection = () => {
               <ArrowRight size={18} />
             </a>
             <a
-              href="mailto:hello@campaignhub.io"
+              href="https://campaign-hub-central.replit.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
             >
               Start Your Free Pilot
