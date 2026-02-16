@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
-
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
@@ -33,14 +31,13 @@ export const Navbar = () => {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#" className="flex items-center">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.56%E2%80%AFPM-JD3RT0F6to7pICwUJFfIuU8hN78BUY.jpeg"
-            alt="Sequence"
-            width={160}
-            height={40}
-            className="h-8 w-auto"
-          />
+        <a href="#" className="flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">
+            CH
+          </div>
+          <span className="text-lg font-bold text-foreground">
+            CampaignHub
+          </span>
         </a>
 
         {/* Desktop Nav */}
