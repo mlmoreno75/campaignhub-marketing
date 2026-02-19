@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import Image from "next/image";
+import { DemoModal } from "@/components/demo-modal";
 
 export const Hero = () => {
+  const [demoOpen, setDemoOpen] = useState(false);
   return (
     <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32">
       {/* Subtle gradient background */}
@@ -40,13 +43,13 @@ export const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#cta"
+              <button
+                onClick={() => setDemoOpen(true)}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-medium text-white hover:bg-primary-hover transition-colors shadow-lg shadow-primary/25"
               >
                 Request a Demo
                 <ArrowRight size={18} />
-              </a>
+              </button>
               <a
                 href="#how-it-works"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-6 py-3 text-base font-medium text-foreground hover:bg-gray-50 transition-colors"
@@ -120,6 +123,8 @@ export const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
     </section>
   );
 };

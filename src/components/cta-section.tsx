@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { DemoModal } from "@/components/demo-modal";
 
 export const CTASection = () => {
+  const [demoOpen, setDemoOpen] = useState(false);
   return (
     <section id="cta" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -29,13 +32,13 @@ export const CTASection = () => {
           </p>
 
           <div className="relative mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:hello@campaignhub.io"
+            <button
+              onClick={() => setDemoOpen(true)}
               className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary hover:bg-gray-50 transition-colors shadow-lg"
             >
               Request a Demo
               <ArrowRight size={18} />
-            </a>
+            </button>
             <a
               href="https://campaign-hub-central.replit.app"
               target="_blank"
@@ -51,6 +54,8 @@ export const CTASection = () => {
           </p>
         </motion.div>
       </div>
+
+      <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
     </section>
   );
 };
