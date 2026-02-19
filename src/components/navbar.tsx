@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { DemoModal } from "@/components/demo-modal";
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
@@ -13,6 +14,7 @@ const navLinks = [
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -55,14 +57,16 @@ export const Navbar = () => {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#cta"
+          <button
+            onClick={() => setDemoOpen(true)}
             className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-gray-50 transition-colors"
           >
             Request Demo
-          </a>
+          </button>
           <a
-            href="#cta"
+            href="https://campaign-hub-central.replit.app"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
           >
             Start Pilot
@@ -93,14 +97,19 @@ export const Navbar = () => {
             </a>
           ))}
           <div className="flex flex-col gap-2 pt-3 border-t border-border">
-            <a
-              href="#cta"
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                setDemoOpen(true);
+              }}
               className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground text-center hover:bg-gray-50 transition-colors"
             >
               Request Demo
-            </a>
+            </button>
             <a
-              href="#cta"
+              href="https://campaign-hub-central.replit.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white text-center hover:bg-primary-hover transition-colors"
             >
               Start Pilot
@@ -108,6 +117,8 @@ export const Navbar = () => {
           </div>
         </div>
       )}
+
+      <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
     </header>
   );
 };
