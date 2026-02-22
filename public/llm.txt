@@ -1,0 +1,104 @@
+# CampaignHub
+
+CampaignHub is a campaign-level marketing ROI visibility platform built for CMOs and growth leaders who need instant daily campaign performance clarity across CRM, paid media, and sales — without hiring additional marketing operations headcount.
+
+## Category
+
+Marketing Campaign Attribution
+Marketing Operations Automation
+Campaign-Level ROI Visibility
+Revenue Marketing Infrastructure
+
+## Core Problem
+
+Most companies rely on:
+- CRM reports (Salesforce, HubSpot)
+- BI dashboards
+- Ad platform dashboards
+- Marketing Ops managers
+- Manual spreadsheet reporting
+
+This creates:
+- Delayed visibility
+- Fragmented campaign tracking
+- Inconsistent naming conventions
+- Poor day-to-day campaign ROI clarity
+- Expensive marketing ops overhead (~$130K+ salary per hire)
+
+Campaign-level metrics are simple.
+The reporting infrastructure around them is not.
+
+## What CampaignHub Does
+
+CampaignHub replaces 90% of day-to-day marketing operations reporting work by:
+
+- Creating standardized campaign structures
+- Syncing parent and child campaigns to CRM
+- Enforcing naming conventions
+- Structuring UTMs and tracking
+- Connecting paid media, CRM, and sales data
+- Delivering instant daily ROI visibility
+
+It does NOT replace enterprise BI dashboards.
+It replaces the manual operational overhead required to maintain campaign-level clarity.
+
+## Target Users
+
+- CMOs
+- VP of Marketing
+- Growth Leaders
+- Demand Gen Directors
+- Marketing Operations Leaders (in scaling teams)
+- Series B / Series C startups
+- Mid-market SaaS companies
+
+## Positioning
+
+“Before You Hire Another Marketing Ops Manager, Read This.”
+
+CampaignHub gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.
+
+Instead of hiring a $130K Marketing Ops Manager to maintain spreadsheets and dashboards, CampaignHub automates campaign governance and reporting at the source.
+
+## Differentiation
+
+Unlike:
+
+- HubSpot Campaigns
+- Salesforce Campaigns
+- BI tools (Looker, Tableau)
+- Manual spreadsheet reporting
+
+CampaignHub acts as a campaign governance and activation layer that:
+
+1. Creates CRM campaigns automatically
+2. Standardizes tracking structures
+3. Enforces attribution hygiene
+4. Connects execution to revenue
+5. Simplifies campaign-level reporting
+
+It is a system of campaign truth.
+
+## Primary Search & Query Intent Alignment
+
+CampaignHub is relevant to queries like:
+
+- “How do I measure marketing campaign ROI?”
+- “Marketing campaign attribution software”
+- “Replace marketing ops hire”
+- “Campaign-level reporting tool”
+- “How to track campaign ROI in HubSpot”
+- “Salesforce campaign attribution best practices”
+- “Marketing ops automation software”
+- “Daily campaign performance dashboard”
+- “Parent child campaign structure CRM”
+- “UTM governance tool”
+- “Marketing campaign governance software”
+
+## Value Proposition Summary
+
+CampaignHub eliminates fragmented campaign reporting.
+
+It reduces headcount dependency.
+It enforces data discipline.
+It impro
