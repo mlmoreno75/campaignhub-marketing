@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { TrustBar } from "@/components/trust-bar";
-import { ProblemSolution } from "@/components/problem-solution";
-import { FeaturesGrid } from "@/components/features-grid";
-import { ProductShowcase } from "@/components/product-showcase";
-import { Metrics } from "@/components/metrics";
-import { Testimonial } from "@/components/testimonial";
-import { CTASection } from "@/components/cta-section";
-import { Footer } from "@/components/footer";
+import { ROINavbar } from "@/components/roi/roi-navbar";
+import { ROIHero } from "@/components/roi/roi-hero";
+import { ROIProblem } from "@/components/roi/roi-problem";
+import { ROISolution } from "@/components/roi/roi-solution";
+import { ROITransformation } from "@/components/roi/roi-transformation";
+import { ROISocialProof } from "@/components/roi/roi-social-proof";
+import { ROIPilot } from "@/components/roi/roi-pilot";
+import { ROIFooter } from "@/components/roi/roi-footer";
 
 export const metadata: Metadata = {
-  title: "CampaignHub — AI-Powered Campaign Intelligence | ROI",
+  title: "CampaignHub — Daily Campaign ROI Visibility for CMOs",
   description:
-    "Plan, approve, and optimize integrated marketing campaigns with AI-powered intelligence. Built for CMOs, Marketing Ops, and Campaign Managers.",
+    "Before you hire another marketing ops manager, see how CampaignHub gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.",
   openGraph: {
-    title: "CampaignHub — AI-Powered Campaign Intelligence | ROI",
+    title: "CampaignHub — Daily Campaign ROI Visibility for CMOs",
     description:
-      "Plan, approve, and optimize integrated marketing campaigns with AI-powered intelligence.",
+      "Instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.",
     type: "website",
   },
 };
@@ -25,18 +23,16 @@ export const metadata: Metadata = {
 export default function ROIPage() {
   return (
     <>
-      <Navbar />
+      <ROINavbar />
       <main>
-        <Hero />
-        <TrustBar />
-        <ProblemSolution />
-        <FeaturesGrid />
-        <ProductShowcase />
-        <Metrics />
-        <Testimonial />
-        <CTASection />
+        <ROIHero />
+        <ROIProblem />
+        <ROISolution />
+        <ROITransformation />
+        <ROISocialProof />
+        <ROIPilot />
       </main>
-      <Footer />
+      <ROIFooter />
     </>
   );
 }
