@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Gem, Map, Headset, Tag } from "lucide-react";
+import { PilotModal } from "@/components/pilot-modal";
 
 const perks = [
   { icon: Gem, text: "White-glove onboarding" },
@@ -11,6 +13,7 @@ const perks = [
 ];
 
 export const ROIPilot = () => {
+  const [pilotOpen, setPilotOpen] = useState(false);
   return (
     <section id="pilot" className="py-24 md:py-32 bg-surface">
       <div className="mx-auto max-w-3xl px-6 text-center">
@@ -49,18 +52,18 @@ export const ROIPilot = () => {
           </div>
 
           <div className="mt-12">
-            <a
-              href="https://campaign-hub-central.replit.app"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setPilotOpen(true)}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-surface hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20"
             >
               Apply for a 90-Day Pilot
               <ArrowRight size={18} />
-            </a>
+            </button>
           </div>
         </motion.div>
       </div>
+
+      <PilotModal isOpen={pilotOpen} onClose={() => setPilotOpen(false)} />
     </section>
   );
 };

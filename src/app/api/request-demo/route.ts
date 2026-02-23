@@ -19,12 +19,41 @@ export async function POST(request: Request) {
       );
     }
 
-    // Send notification email to mike@revgenai.biz using mailto fallback
-    // In production, integrate with an email service like SendGrid, Resend, etc.
-    // For now, we store the submission and return success
-    console.log(
-      `Demo request from: ${name} (${email}) — notify mike@revgenai.biz`
-    );
+    const portalId = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
+    const formId = process.env.NEXT_PUBLIC_HUBSPOT_PILOT_FORM_ID;
+
+    if (portalId && formId) {
+      const hubspotResponse = await fetch(
+        `https://api-na2.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fields: [
+              { objectTypeId: "0-1", name: "firstname", value: name },
+              { objectTypeId: "0-1", name: "email", value: email },
+            ],
+            context: {
+              pageUri: "campaignhub.com",
+              pageName: "CampaignHub - Request a Demo",
+            },
+          }),
+        }
+      );
+
+      if (!hubspotResponse.ok) {
+        const hubspotError = await hubspotResponse.text();
+        console.error("HubSpot form submission failed:", hubspotError);
+        return NextResponse.json(
+          { error: "Failed to submit request. Please try again." },
+          { status: 500 }
+        );
+      }
+    } else {
+      console.log(
+        `Demo request from: ${name} (${email}) — HubSpot not configured`
+      );
+    }
 
     return NextResponse.json({
       success: true,

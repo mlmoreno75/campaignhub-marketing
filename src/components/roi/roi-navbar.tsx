@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { PilotModal } from "@/components/pilot-modal";
 
 const navLinks = [
   { label: "The Problem", href: "#problem" },
@@ -14,6 +15,7 @@ const navLinks = [
 export const ROINavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [pilotOpen, setPilotOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -53,12 +55,12 @@ export const ROINavbar = () => {
         </div>
 
         <div className="hidden md:flex items-center">
-          <a
-            href="#pilot"
+          <button
+            onClick={() => setPilotOpen(true)}
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-surface hover:bg-primary-hover transition-colors"
           >
             Apply for a 90-Day Pilot
-          </a>
+          </button>
         </div>
 
         <button
@@ -83,16 +85,20 @@ export const ROINavbar = () => {
             </a>
           ))}
           <div className="pt-3 border-t border-border">
-            <a
-              href="#pilot"
-              onClick={() => setMobileOpen(false)}
-              className="block rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-surface text-center hover:bg-primary-hover transition-colors"
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                setPilotOpen(true);
+              }}
+              className="block w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-surface text-center hover:bg-primary-hover transition-colors"
             >
               Apply for a 90-Day Pilot
-            </a>
+            </button>
           </div>
         </div>
       )}
+
+      <PilotModal isOpen={pilotOpen} onClose={() => setPilotOpen(false)} />
     </header>
   );
 };
