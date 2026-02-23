@@ -4,9 +4,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { DemoModal } from "@/components/demo-modal";
+import { PilotModal } from "@/components/pilot-modal";
 
 export const CTASection = () => {
   const [demoOpen, setDemoOpen] = useState(false);
+  const [pilotOpen, setPilotOpen] = useState(false);
   return (
     <section id="cta" className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -39,14 +41,12 @@ export const CTASection = () => {
               Request a Demo
               <ArrowRight size={18} />
             </button>
-            <a
-              href="https://campaign-hub-central.replit.app"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setPilotOpen(true)}
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
             >
               Start Your Free Pilot
-            </a>
+            </button>
           </div>
 
           <p className="relative mt-6 text-sm text-white/50">
@@ -56,6 +56,7 @@ export const CTASection = () => {
       </div>
 
       <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
+      <PilotModal isOpen={pilotOpen} onClose={() => setPilotOpen(false)} />
     </section>
   );
 };

@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { PilotModal } from "@/components/pilot-modal";
 
 export const ROIHero = () => {
+  const [pilotOpen, setPilotOpen] = useState(false);
   return (
     <section className="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
       {/* Subtle background gradient */}
@@ -25,19 +28,21 @@ export const ROIHero = () => {
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4">
-            <a
-              href="#pilot"
+            <button
+              onClick={() => setPilotOpen(true)}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-surface hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20"
             >
               Apply for a 90-Day Pilot
               <ArrowRight size={18} />
-            </a>
+            </button>
             <p className="text-sm text-muted">
               No dashboards. No BI rebuild. No additional headcount.
             </p>
           </div>
         </motion.div>
       </div>
+
+      <PilotModal isOpen={pilotOpen} onClose={() => setPilotOpen(false)} />
     </section>
   );
 };

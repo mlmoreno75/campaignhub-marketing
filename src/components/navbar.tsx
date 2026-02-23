@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { DemoModal } from "@/components/demo-modal";
+import { PilotModal } from "@/components/pilot-modal";
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
@@ -15,6 +16,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [demoOpen, setDemoOpen] = useState(false);
+  const [pilotOpen, setPilotOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -63,14 +65,12 @@ export const Navbar = () => {
           >
             Request Demo
           </button>
-          <a
-            href="https://campaign-hub-central.replit.app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setPilotOpen(true)}
             className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
           >
             Start Pilot
-          </a>
+          </button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -106,19 +106,21 @@ export const Navbar = () => {
             >
               Request Demo
             </button>
-            <a
-              href="https://campaign-hub-central.replit.app"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                setPilotOpen(true);
+              }}
               className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white text-center hover:bg-primary-hover transition-colors"
             >
               Start Pilot
-            </a>
+            </button>
           </div>
         </div>
       )}
 
       <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
+      <PilotModal isOpen={pilotOpen} onClose={() => setPilotOpen(false)} />
     </header>
   );
 };
