@@ -77,7 +77,7 @@ export const Hero = () => {
                 </div>
                 <div className="flex-1 text-center">
                   <div className="mx-auto max-w-xs rounded-md bg-gray-800 px-3 py-1 text-xs text-gray-400">
-                    app.campaignhub.io/dashboard
+                    app.campaignagent.ai/dashboard
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export const Hero = () => {
               <div className="rounded-b-lg overflow-hidden">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.03%E2%80%AFPM-muNf1HQ2vv18QQ28dtqW25vtymt7YU.jpeg"
-                  alt="CampaignHub dashboard showing Q1 Product Launch Campaign with tactics, budget details, approval workflow, and campaign details"
+                  alt="CampaignAgent dashboard showing Q1 Product Launch Campaign with tactics, budget details, approval workflow, and campaign details"
                   width={1400}
                   height={875}
                   className="w-full h-auto rounded-b-lg"

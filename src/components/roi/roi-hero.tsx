@@ -23,7 +23,7 @@ export const ROIHero = () => {
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed max-w-2xl mx-auto text-pretty">
-            CampaignHub gives CMOs instant daily campaign ROI visibility across
+            CampaignAgent gives CMOs instant daily campaign ROI visibility across
             CRM, ads, and sales — without adding headcount.
           </p>
 

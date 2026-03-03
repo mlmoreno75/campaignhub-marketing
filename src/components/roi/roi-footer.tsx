@@ -1,6 +1,6 @@
 const footerLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Contact", href: "mailto:hello@campaignhub.io" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Contact", href: "mailto:mike@revgenai.biz" },
 ];
 
 export const ROIFooter = () => {
@@ -10,10 +10,10 @@ export const ROIFooter = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary font-bold text-xs text-surface">
-              CH
+              CA
             </div>
             <span className="text-sm font-semibold text-foreground">
-              CampaignHub
+              CampaignAgent
             </span>
           </div>
 
@@ -30,7 +30,7 @@ export const ROIFooter = () => {
           </div>
 
           <p className="text-sm text-muted">
-            {"© 2026 CampaignHub"}
+            {"© 2026 CampaignAgent"}
           </p>
         </div>
       </div>

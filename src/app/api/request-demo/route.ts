@@ -34,8 +34,8 @@ export async function POST(request: Request) {
               { objectTypeId: "0-1", name: "email", value: email },
             ],
             context: {
-              pageUri: "campaignhub.com",
-              pageName: "CampaignHub - Request a Demo",
+              pageUri: "campaignagent.ai",
+              pageName: "CampaignAgent - Request a Demo",
             },
           }),
         }

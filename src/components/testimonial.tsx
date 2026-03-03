@@ -20,7 +20,7 @@ export const Testimonial = () => {
           />
 
           <p className="text-xl md:text-2xl font-medium text-foreground leading-relaxed">
-            &ldquo;CampaignHub gave us the visibility we never had. Our team
+            &ldquo;CampaignAgent gave us the visibility we never had. Our team
             went from juggling spreadsheets and email chains to launching
             campaigns 60% faster with full stakeholder alignment.&rdquo;
           </p>

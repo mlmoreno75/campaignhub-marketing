@@ -43,7 +43,7 @@ export const ProblemSolution = () => {
           </h2>
           <p className="mt-4 text-lg text-muted">
             Marketing teams waste hours juggling tools, chasing approvals, and
-            flying blind. CampaignHub changes that.
+            flying blind. CampaignAgent changes that.
           </p>
         </motion.div>
 

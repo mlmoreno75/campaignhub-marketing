@@ -69,7 +69,7 @@ export const Metrics = () => {
             Results That Speak for Themselves
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Marketing teams using CampaignHub see measurable improvements across
+            Marketing teams using CampaignAgent see measurable improvements across
             the board.
           </p>
         </motion.div>

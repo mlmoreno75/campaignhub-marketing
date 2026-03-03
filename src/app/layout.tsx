@@ -9,11 +9,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CampaignHub — AI-Powered Campaign Intelligence",
+  title: "CampaignAgent — AI-Powered Campaign Intelligence",
   description:
     "Plan, approve, and optimize integrated marketing campaigns with AI-powered intelligence. Built for CMOs, Marketing Ops, and Campaign Managers.",
   openGraph: {
-    title: "CampaignHub — AI-Powered Campaign Intelligence",
+    title: "CampaignAgent — AI-Powered Campaign Intelligence",
     description:
       "Plan, approve, and optimize integrated marketing campaigns with AI-powered intelligence.",
     type: "website",
