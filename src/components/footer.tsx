@@ -1,7 +1,7 @@
 const footerLinks = [
-  { label: "Privacy", href: "#" },
-  { label: "Terms", href: "#" },
-  { label: "Contact", href: "mailto:hello@campaignhub.io" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "Contact", href: "mailto:privacy@revgenai.biz" },
 ];
 
 export const Footer = () => {
