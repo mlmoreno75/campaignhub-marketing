@@ -3,15 +3,15 @@
 import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 
-interface PilotModalProps {
+interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
-  const [name, setName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [companyEmail, setCompanyEmail] = useState("");
+export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -45,10 +45,10 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
     setErrorMessage("");
 
     try {
-      const res = await fetch("/api/apply-pilot", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, companyName, companyEmail }),
+        body: JSON.stringify({ firstName, lastName, email }),
       });
 
       if (!res.ok) {
@@ -57,9 +57,9 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
       }
 
       setStatus("success");
-      setName("");
-      setCompanyName("");
-      setCompanyEmail("");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
     } catch (err) {
       setStatus("error");
       setErrorMessage(
@@ -71,9 +71,9 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
   const handleClose = () => {
     setStatus("idle");
     setErrorMessage("");
-    setName("");
-    setCompanyName("");
-    setCompanyEmail("");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
     onClose();
   };
 
@@ -88,7 +88,7 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
       }}
       role="dialog"
       aria-modal="true"
-      aria-label="Apply for a 90-Day Pilot"
+      aria-label="Contact Us"
     >
       <div className="relative w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl">
         <button
@@ -117,10 +117,10 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
               </svg>
             </div>
             <h3 className="text-xl font-bold text-gray-900">
-              Application Received!
+              Message Sent!
             </h3>
             <p className="mt-2 text-sm text-gray-600">
-              {"Thank you for applying to the 90-Day Pilot Program. Our team will review your application and reach out shortly."}
+              {"Thank you for reaching out. Our team will get back to you shortly."}
             </p>
             <button
               onClick={handleClose}
@@ -138,65 +138,64 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900">
-                Apply for a 90-Day Pilot
+                Contact Us
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                Fill out the form below and our team will get in touch to
-                discuss your pilot onboarding.
+                Fill out the form below and our team will get in touch with you.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label
-                  htmlFor="pilot-name"
+                  htmlFor="contact-first-name"
                   className="block text-sm font-medium text-gray-700 mb-1.5"
                 >
-                  Name <span className="text-red-500">*</span>
+                  First Name <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="pilot-name"
+                  id="contact-first-name"
                   type="text"
                   required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Your full name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="John"
                   className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                 />
               </div>
 
               <div>
                 <label
-                  htmlFor="pilot-company"
+                  htmlFor="contact-last-name"
                   className="block text-sm font-medium text-gray-700 mb-1.5"
                 >
-                  Company Name <span className="text-red-500">*</span>
+                  Last Name <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="pilot-company"
+                  id="contact-last-name"
                   type="text"
                   required
-                  value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
-                  placeholder="Your company name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder="Doe"
                   className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                 />
               </div>
 
               <div>
                 <label
-                  htmlFor="pilot-email"
+                  htmlFor="contact-email"
                   className="block text-sm font-medium text-gray-700 mb-1.5"
                 >
-                  Company Email <span className="text-red-500">*</span>
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
-                  id="pilot-email"
+                  id="contact-email"
                   type="email"
                   required
-                  value={companyEmail}
-                  onChange={(e) => setCompanyEmail(e.target.value)}
-                  placeholder="you@company.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="john@example.com"
                   className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
                 />
               </div>
@@ -211,8 +210,8 @@ export const PilotModal = ({ isOpen, onClose }: PilotModalProps) => {
                 className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white hover:bg-primary-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {status === "submitting"
-                  ? "Submitting..."
-                  : "Submit Application"}
+                  ? "Sending..."
+                  : "Send Message"}
               </button>
 
               <p className="text-xs text-center text-gray-500">

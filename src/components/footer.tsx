@@ -1,11 +1,17 @@
+"use client";
+
+import { useState } from "react";
+import { ContactModal } from "@/components/contact-modal";
+
 const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "Contact", href: "mailto:mike@revgenai.biz" },
 ];
 
 export const Footer = () => {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <footer className="border-t border-border bg-white py-12">
       <div className="mx-auto max-w-7xl px-6">
@@ -31,6 +37,12 @@ export const Footer = () => {
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={() => setContactOpen(true)}
+              className="text-sm text-muted hover:text-foreground transition-colors"
+            >
+              Contact
+            </button>
           </div>
 
           {/* Copyright */}
@@ -39,6 +51,8 @@ export const Footer = () => {
           </p>
         </div>
       </div>
+
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </footer>
   );
 };
