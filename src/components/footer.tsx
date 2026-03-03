@@ -13,10 +13,10 @@ export const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-white font-bold text-xs">
-              CH
+              CA
             </div>
             <span className="text-sm font-semibold text-foreground">
-              CampaignHub
+              CampaignAgent
             </span>
           </div>
 
@@ -35,7 +35,7 @@ export const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted">
-            © {new Date().getFullYear()} CampaignHub. All rights reserved.
+            © {new Date().getFullYear()} CampaignAgent. All rights reserved.
           </p>
         </div>
       </div>

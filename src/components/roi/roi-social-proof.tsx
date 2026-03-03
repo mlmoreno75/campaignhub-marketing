@@ -33,7 +33,7 @@ export const ROISocialProof = () => {
 
           <p className="text-xl md:text-2xl font-medium text-foreground leading-relaxed">
             &ldquo;We were about to hire our third marketing ops analyst just
-            for reporting. CampaignHub replaced that entire need in under
+            for reporting. CampaignAgent replaced that entire need in under
             60 days. The ROI was immediate.&rdquo;
           </p>
 

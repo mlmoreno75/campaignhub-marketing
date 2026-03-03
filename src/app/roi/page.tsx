@@ -9,11 +9,11 @@ import { ROIPilot } from "@/components/roi/roi-pilot";
 import { ROIFooter } from "@/components/roi/roi-footer";
 
 export const metadata: Metadata = {
-  title: "CampaignHub — Daily Campaign ROI Visibility for CMOs",
+  title: "CampaignAgent — Daily Campaign ROI Visibility for CMOs",
   description:
-    "Before you hire another marketing ops manager, see how CampaignHub gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.",
+    "Before you hire another marketing ops manager, see how CampaignAgent gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.",
   openGraph: {
-    title: "CampaignHub — Daily Campaign ROI Visibility for CMOs",
+    title: "CampaignAgent — Daily Campaign ROI Visibility for CMOs",
     description:
       "Instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.",
     type: "website",

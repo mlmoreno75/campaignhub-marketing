@@ -27,7 +27,7 @@ export const ROISolution = () => {
               Meet the Daily Campaign Command Center
             </h2>
             <p className="mt-6 text-base text-muted leading-relaxed">
-              CampaignHub sits on top of your CRM and campaign stack to
+              CampaignAgent sits on top of your CRM and campaign stack to
               automatically structure, track, and surface the metrics that
               matter — campaign by campaign.
             </p>
@@ -67,14 +67,14 @@ export const ROISolution = () => {
                 </div>
                 <div className="flex-1 text-center">
                   <div className="mx-auto max-w-xs rounded-md bg-gray-800 px-3 py-1 text-xs text-gray-400">
-                    app.campaignhub.io/command-center
+                    app.campaignagent.ai/command-center
                   </div>
                 </div>
               </div>
               <div className="rounded-b-lg overflow-hidden">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Image%202-8-26%20at%209.03%E2%80%AFPM-muNf1HQ2vv18QQ28dtqW25vtymt7YU.jpeg"
-                  alt="CampaignHub command center dashboard showing campaign ROI metrics, cross-channel performance, and budget tracking"
+                  alt="CampaignAgent command center dashboard showing campaign ROI metrics, cross-channel performance, and budget tracking"
                   width={1400}
                   height={875}
                   className="w-full h-auto rounded-b-lg"

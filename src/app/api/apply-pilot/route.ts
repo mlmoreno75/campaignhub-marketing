@@ -42,8 +42,8 @@ export async function POST(request: Request) {
             { objectTypeId: "0-1", name: "email", value: companyEmail },
           ],
           context: {
-            pageUri: "campaignhub.com/roi",
-            pageName: "CampaignHub - 90-Day Pilot Application",
+            pageUri: "campaignagent.ai/roi",
+            pageName: "CampaignAgent - 90-Day Pilot Application",
           },
         }),
       }

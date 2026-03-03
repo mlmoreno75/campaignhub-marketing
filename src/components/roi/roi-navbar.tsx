@@ -35,10 +35,10 @@ export const ROINavbar = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="/ROI" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-bold text-sm text-surface">
-            CH
+            CA
           </div>
           <span className="text-lg font-bold text-foreground">
-            CampaignHub
+            CampaignAgent
           </span>
         </a>
 

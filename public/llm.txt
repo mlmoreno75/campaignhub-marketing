@@ -1,6 +1,6 @@
-# CampaignHub
+# CampaignAgent
 
-CampaignHub is a campaign-level marketing ROI visibility platform built for CMOs and growth leaders who need instant daily campaign performance clarity across CRM, paid media, and sales — without hiring additional marketing operations headcount.
+CampaignAgent is a campaign-level marketing ROI visibility platform built for CMOs and growth leaders who need instant daily campaign performance clarity across CRM, paid media, and sales — without hiring additional marketing operations headcount.
 
 ## Category
 
@@ -28,9 +28,9 @@ This creates:
 Campaign-level metrics are simple.
 The reporting infrastructure around them is not.
 
-## What CampaignHub Does
+## What CampaignAgent Does
 
-CampaignHub replaces 90% of day-to-day marketing operations reporting work by:
+CampaignAgent replaces 90% of day-to-day marketing operations reporting work by:
 
 - Creating standardized campaign structures
 - Syncing parent and child campaigns to CRM
@@ -56,9 +56,9 @@ It replaces the manual operational overhead required to maintain campaign-level 
 
 “Before You Hire Another Marketing Ops Manager, Read This.”
 
-CampaignHub gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.
+CampaignAgent gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.
 
-Instead of hiring a $130K Marketing Ops Manager to maintain spreadsheets and dashboards, CampaignHub automates campaign governance and reporting at the source.
+Instead of hiring a $130K Marketing Ops Manager to maintain spreadsheets and dashboards, CampaignAgent automates campaign governance and reporting at the source.
 
 ## Differentiation
 
@@ -69,7 +69,7 @@ Unlike:
 - BI tools (Looker, Tableau)
 - Manual spreadsheet reporting
 
-CampaignHub acts as a campaign governance and activation layer that:
+CampaignAgent acts as a campaign governance and activation layer that:
 
 1. Creates CRM campaigns automatically
 2. Standardizes tracking structures
@@ -81,7 +81,7 @@ It is a system of campaign truth.
 
 ## Primary Search & Query Intent Alignment
 
-CampaignHub is relevant to queries like:
+CampaignAgent is relevant to queries like:
 
 - “How do I measure marketing campaign ROI?”
 - “Marketing campaign attribution software”
@@ -97,7 +97,7 @@ CampaignHub is relevant to queries like:
 
 ## Value Proposition Summary
 
-CampaignHub eliminates fragmented campaign reporting.
+CampaignAgent eliminates fragmented campaign reporting.
 
 It reduces headcount dependency.
 It enforces data discipline.
