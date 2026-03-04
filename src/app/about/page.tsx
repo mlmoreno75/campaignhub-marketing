@@ -1,5 +1,8 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Building2,
   Mail,
@@ -15,15 +18,9 @@ import {
   FileText,
   ExternalLink,
 } from "lucide-react";
+import { InvestorModal } from "@/components/investor-modal";
 
-export const metadata: Metadata = {
-  title: "About Us | CampaignAgent — AI-Native GTM Platform",
-  description:
-    "CampaignAgent is an AI-native GTM platform built by Michael Moreno, a 15-year B2B GTM operator. A product of RevGen AI LLC, Pflugerville, Texas.",
-  alternates: {
-    canonical: "https://campaignagent.app/about",
-  },
-};
+// Metadata moved to layout or generateMetadata for client components
 
 const companyInfo = [
   {
@@ -115,6 +112,8 @@ const investorCards = [
 ];
 
 export default function AboutPage() {
+  const [investorOpen, setInvestorOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Sticky Navbar */}
@@ -228,12 +227,14 @@ export default function AboutPage() {
             <div className="grid items-start gap-12 lg:grid-cols-[280px_1fr]">
               {/* Founder Avatar */}
               <div className="flex flex-col items-center lg:items-start">
-                <div
-                  className="flex h-48 w-48 items-center justify-center rounded-2xl bg-[#e2e8f0] text-5xl font-bold text-[#64748b]"
-                  aria-label="Michael Moreno, Founder of CampaignAgent and RevGen AI LLC"
-                >
-                  MM
-                </div>
+                <Image
+                  src="/images/mike-moreno.jpg"
+                  alt="Michael Moreno, Founder of CampaignAgent and RevGen AI LLC"
+                  width={192}
+                  height={192}
+                  className="h-48 w-48 rounded-2xl object-cover"
+                  priority
+                />
                 <div className="mt-6 flex flex-col items-center gap-3 lg:items-start">
                   <a
                     href="https://linkedin.com/in/michael-moreno"
@@ -453,12 +454,12 @@ export default function AboutPage() {
               <p className="mb-4 text-[#94a3b8]">
                 Interested in learning more?
               </p>
-              <a
-                href="mailto:mike@revgenai.biz?subject=Investor%20Deck%20Request%20%E2%80%94%20CampaignAgent"
+              <button
+                onClick={() => setInvestorOpen(true)}
                 className="inline-flex items-center justify-center rounded-lg bg-[#4f46e5] px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-[#4338ca]"
               >
                 Request an Investor Deck
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -596,6 +597,8 @@ export default function AboutPage() {
           </div>
         </div>
       </footer>
+
+      <InvestorModal isOpen={investorOpen} onClose={() => setInvestorOpen(false)} />
     </div>
   );
 }
