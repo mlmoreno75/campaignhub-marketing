@@ -32,4 +32,4 @@ Disallow: /api/
 Disallow: /private/
 Disallow: /dashboard/
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://campaignagent.app/sitemap.xml
