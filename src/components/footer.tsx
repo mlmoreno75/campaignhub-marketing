@@ -40,7 +40,7 @@ export const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://x.com/campaign_agent"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-foreground transition-colors"
