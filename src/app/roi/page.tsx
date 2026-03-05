@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "CampaignAgent — Daily Campaign ROI Visibility for CMOs",
   description:
     "Before you hire another marketing ops manager, see how CampaignAgent gives CMOs instant daily campaign ROI visibility across CRM, ads, and sales — without adding headcount.",
+  alternates: {
+    canonical: "https://campaignagent.app/roi",
+  },
   openGraph: {
     title: "CampaignAgent — Daily Campaign ROI Visibility for CMOs",
     description:
