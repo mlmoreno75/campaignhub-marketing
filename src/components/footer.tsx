@@ -51,7 +51,7 @@ export const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.youtube.com/@RevGenAI"
+                href="https://www.youtube.com/@Campaign_Agent_App"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-foreground transition-colors"
