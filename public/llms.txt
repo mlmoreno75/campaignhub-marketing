@@ -1,0 +1,16 @@
+# CampaignAgent
+> AI-native campaign intelligence platform for CMOs and marketing teams.
+## Product
+CampaignAgent helps B2B SaaS marketing teams plan, approve, and optimize integrated campaigns from a single command center. Built for CMOs, Campaign Managers, and Product Marketers who need instant campaign ROI visibility without adding headcount.
+## Key Capabilities
+- Unified campaign dashboard across all channels
+- AI-powered approval workflows
+- Real-time attribution and ROI reporting
+- HubSpot and Salesforce integration
+## Target Customer
+B2B SaaS companies $20M–$200M ARR with lean marketing teams running 8+ campaigns per quarter.
+## Links
+- Homepage: https://campaignagent.app
+- About: https://campaignagent.app/about
+- ROI Landing Page: https://campaignagent.app/roi
+- Early Access: https://campaignagent.app/#cta
