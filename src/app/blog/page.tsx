@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts, formatDate, Post } from "@/lib/posts";
+import { getAllPosts, formatDate } from "@/lib/posts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -26,7 +26,18 @@ export const metadata: Metadata = {
   },
 };
 
-function PostCard({ post }: { post: Post }) {
+interface PostWithFormattedDate {
+  slug: string;
+  title: string;
+  date: string;
+  formattedDate: string;
+  description: string;
+  author: string;
+  tags: string[];
+  readTime: number;
+}
+
+function PostCard({ post }: { post: PostWithFormattedDate }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -64,7 +75,7 @@ function PostCard({ post }: { post: Post }) {
         <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 text-xs text-slate-400">
           <span>{post.author}</span>
           <span>
-            {formatDate(post.date)} · {post.readTime} min read
+            {post.formattedDate} · {post.readTime} min read
           </span>
         </div>
       </div>
@@ -73,7 +84,13 @@ function PostCard({ post }: { post: Post }) {
 }
 
 export default async function BlogPage() {
-  const posts = await getAllPosts();
+  const rawPosts = await getAllPosts();
+  const posts: PostWithFormattedDate[] = await Promise.all(
+    rawPosts.map(async (post) => ({
+      ...post,
+      formattedDate: await formatDate(post.date),
+    }))
+  );
 
   return (
     <div className="min-h-screen bg-white">

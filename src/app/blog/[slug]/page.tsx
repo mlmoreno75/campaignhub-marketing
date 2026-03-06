@@ -63,6 +63,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const formattedDate = await formatDate(post.date);
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -168,7 +170,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Meta */}
             <p className="mt-4 text-sm text-slate-500">
-              {post.author} · {formatDate(post.date)} · {post.readTime} min read
+              {post.author} · {formattedDate} · {post.readTime} min read
             </p>
           </div>
         </section>

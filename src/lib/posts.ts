@@ -88,7 +88,7 @@ export async function getAllSlugs(): Promise<{ slug: string }[]> {
     }));
 }
 
-export function formatDate(dateStr: string): string {
+export async function formatDate(dateStr: string): Promise<string> {
   const date = new Date(dateStr);
   return date.toLocaleDateString("en-US", {
     year: "numeric",
