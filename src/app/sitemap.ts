@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9 
     },
     { 
+      url: 'https://campaignagent.app/blog', 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly', 
+      priority: 0.8 
+    },
+    { 
       url: 'https://campaignagent.app/privacy', 
       lastModified: new Date(), 
       changeFrequency: 'yearly', 
