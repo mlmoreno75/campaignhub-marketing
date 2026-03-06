@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllSlugs, formatDate } from "@/lib/posts";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -120,25 +122,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       />
 
       <div className="min-h-screen bg-white">
-        {/* Navigation */}
-        <header className="border-b border-slate-200 bg-white">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white">
-                CA
-              </div>
-              <span className="text-lg font-bold text-slate-900">
-                CampaignAgent
-              </span>
-            </Link>
-            <Link
-              href="/blog"
-              className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors"
-            >
-              ← Back to Blog
-            </Link>
-          </nav>
-        </header>
+        <Navbar />
 
         {/* Post Header */}
         <section className="border-b border-slate-200 bg-slate-50 py-16">
@@ -238,12 +222,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-slate-200 bg-white py-8">
-          <div className="mx-auto max-w-7xl px-6 text-center text-sm text-slate-400">
-            © {new Date().getFullYear()} CampaignAgent. All rights reserved.
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
