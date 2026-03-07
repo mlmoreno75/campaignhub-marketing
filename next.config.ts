@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+    async redirects() {
+          return [
+            {
+                      source: "/:path*",
+                      has: [{ type: "host", value: "www.campaignagent.app" }],
+                      destination: "https://campaignagent.app/:path*",
+                      permanent: true,
+            },
+                ];
+    },
   async headers() {
     return [
       {
