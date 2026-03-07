@@ -8,6 +8,7 @@ import { ProductShowcase } from "@/components/product-showcase";
 import { Metrics } from "@/components/metrics";
 import { Testimonial } from "@/components/testimonial";
 import { CTASection } from "@/components/cta-section";
+import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 
 const jsonLd = {
@@ -66,6 +67,7 @@ export default function Home() {
         <Metrics />
         <Testimonial />
         <CTASection />
+        <FAQSection />
       </main>
       <Footer />
     </>

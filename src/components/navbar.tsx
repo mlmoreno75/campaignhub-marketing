@@ -1,22 +1,33 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { DemoModal } from "@/components/demo-modal";
 import { PilotModal } from "@/components/pilot-modal";
+
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Results", href: "#metrics" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#cta" },
 ];
 
 export const Navbar = () => {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [demoOpen, setDemoOpen] = useState(false);
   const [pilotOpen, setPilotOpen] = useState(false);
+
+  // Resolve a nav href: hash links get prefixed with "/" when not on homepage
+  const resolveHref = (href: string) => {
+    if (href.startsWith("#")) return isHome ? href : `/${href}`;
+    return href;
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -35,7 +46,7 @@ export const Navbar = () => {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">
             CA
           </div>
@@ -49,7 +60,7 @@ export const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
               {link.label}
@@ -89,7 +100,7 @@ export const Navbar = () => {
           {navLinks.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               className="block text-sm text-muted hover:text-foreground"
               onClick={() => setMobileOpen(false)}
             >
