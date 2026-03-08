@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    const { firstName, lastName, email } = await request.json();
+    const { firstName, lastName, email, phone, company, comments } = await request.json();
 
     if (!firstName || !lastName || !email) {
       return NextResponse.json(
@@ -40,6 +40,9 @@ export async function POST(request: Request) {
             { objectTypeId: "0-1", name: "firstname", value: firstName },
             { objectTypeId: "0-1", name: "lastname", value: lastName },
             { objectTypeId: "0-1", name: "email", value: email },
+            ...(phone ? [{ objectTypeId: "0-1", name: "phone", value: phone }] : []),
+            ...(company ? [{ objectTypeId: "0-1", name: "company", value: company }] : []),
+            ...(comments ? [{ objectTypeId: "0-1", name: "message", value: comments }] : []),
           ],
           context: {
             pageUri: "campaignagent.ai",

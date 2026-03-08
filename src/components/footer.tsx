@@ -91,7 +91,7 @@ export const Footer = () => {
               onClick={() => setContactOpen(true)}
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
-              Contact
+              Contact Us
             </button>
           </div>
 
