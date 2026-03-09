@@ -10,29 +10,14 @@ import { Testimonial } from "@/components/testimonial";
 import { CTASection } from "@/components/cta-section";
 import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
+import { faqs } from "@/data/faqs";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      name: "RevGen AI LLC",
-      url: "https://campaignagent.app",
-      logo: "https://campaignagent.app/favicon.ico",
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: "mike@revgenai.biz",
-        contactType: "customer support",
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Pflugerville",
-        addressRegion: "TX",
-        addressCountry: "US",
-      },
-    },
-    {
       "@type": "SoftwareApplication",
+      "@id": "https://campaignagent.app/#software",
       name: "CampaignAgent",
       url: "https://campaignagent.app",
       applicationCategory: "BusinessApplication",
@@ -43,8 +28,19 @@ const jsonLd = {
         "@type": "Offer",
         price: "0",
         priceCurrency: "USD",
-        description: "14-day free pilot",
+        description: "14-day free pilot. No credit card required.",
       },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
     },
   ],
 };
