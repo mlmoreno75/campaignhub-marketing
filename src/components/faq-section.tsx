@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { faqs } from "@/data/faqs";
+import { DemoModal } from "@/components/demo-modal";
 
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [demoOpen, setDemoOpen] = useState(false);
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
@@ -79,12 +81,13 @@ export const FAQSection = () => {
           <p className="text-foreground font-medium text-lg mb-6">
             Still have questions? We'd love to show you the platform.
           </p>
-          <a
-            href="#cta"
+          <button
+            onClick={() => setDemoOpen(true)}
             className="inline-block bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-semibold text-base transition-colors duration-200"
           >
             Request a Demo
-          </a>
+          </button>
+          <DemoModal isOpen={demoOpen} onClose={() => setDemoOpen(false)} />
         </div>
       </div>
     </section>

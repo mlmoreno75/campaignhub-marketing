@@ -5,6 +5,7 @@ import { ContactModal } from "@/components/contact-modal";
 
 const footerLinks = [
   { label: "About", href: "/about" },
+  { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
@@ -74,7 +75,7 @@ export const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/campaignagent"
+                href="https://www.instagram.com/campagentapp/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted hover:text-foreground transition-colors"

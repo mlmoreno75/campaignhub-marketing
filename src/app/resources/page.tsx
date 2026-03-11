@@ -1,18 +1,21 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts, formatDate } from "@/lib/posts";
+import { getAllResources, formatResourceDate } from "@/lib/resources";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { DemoCTA } from "@/components/demo-cta";
 
 export const metadata: Metadata = {
-  title: "Blog — CampaignAgent",
+  title: "Resources — CampaignAgent",
   description:
-    "Insights on marketing campaign governance, attribution, and marketing ops for CMOs and B2B SaaS marketing teams.",
+    "Evergreen guides on campaign governance, attribution, ROI tracking, and marketing ops for CMOs and B2B SaaS marketing teams.",
   alternates: {
-    canonical: "https://campaignagent.app/blog",
+    canonical: "https://campaignagent.app/resources",
   },
   openGraph: {
+    title: "Resources — CampaignAgent",
+    description:
+      "Evergreen guides on campaign governance, attribution, ROI tracking, and marketing ops.",
     images: [
       {
         url: "https://campaignagent.app/og-image.jpg",
@@ -27,56 +30,49 @@ export const metadata: Metadata = {
   },
 };
 
-interface PostWithFormattedDate {
+interface ResourceWithFormattedDate {
   slug: string;
   title: string;
   date: string;
   formattedDate: string;
   description: string;
   author: string;
-  tags: string[];
+  category: string;
   readTime: number;
 }
 
-function PostCard({ post }: { post: PostWithFormattedDate }) {
+function ResourceCard({ resource }: { resource: ResourceWithFormattedDate }) {
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/resources/${resource.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:shadow-lg"
     >
       {/* Top accent bar */}
       <div className="h-1.5 bg-gradient-to-r from-indigo-500 to-indigo-400" />
 
       <div className="flex flex-1 flex-col p-6">
-        {/* Tags */}
-        {post.tags.length > 0 && (
-          <div className="mb-3 flex flex-wrap gap-2">
-            {post.tags.slice(0, 2).map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs text-indigo-600"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        {/* Category tag */}
+        <div className="mb-3">
+          <span className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs text-indigo-600">
+            {resource.category}
+          </span>
+        </div>
 
         {/* Title */}
         <h2 className="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
-          {post.title}
+          {resource.title}
         </h2>
 
         {/* Description */}
         <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
-          {post.description}
+          {resource.description}
         </p>
 
         {/* Meta row */}
         <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 text-xs text-slate-400">
-          <span>{post.author}</span>
-          <span>
-            {post.formattedDate} · {post.readTime} min read
+          <span>{resource.readTime} min read</span>
+          <span className="text-indigo-600 font-medium group-hover:underline">
+            Read More →
           </span>
         </div>
       </div>
@@ -84,12 +80,12 @@ function PostCard({ post }: { post: PostWithFormattedDate }) {
   );
 }
 
-export default async function BlogPage() {
-  const rawPosts = await getAllPosts();
-  const posts: PostWithFormattedDate[] = await Promise.all(
-    rawPosts.map(async (post) => ({
-      ...post,
-      formattedDate: await formatDate(post.date),
+export default async function ResourcesPage() {
+  const rawResources = await getAllResources();
+  const resources: ResourceWithFormattedDate[] = await Promise.all(
+    rawResources.map(async (resource) => ({
+      ...resource,
+      formattedDate: await formatResourceDate(resource.date),
     }))
   );
 
@@ -101,28 +97,28 @@ export default async function BlogPage() {
       <section className="border-b border-slate-200 bg-slate-50 py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
-            Blog
+            Resources
           </p>
           <h1 className="mt-4 text-4xl font-bold text-slate-900 sm:text-5xl">
-            Marketing Governance & Attribution Insights
+            Campaign Intelligence Knowledge Base
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-500">
-            Practical guidance for CMOs and marketing ops leaders on campaign
-            governance, attribution, and making AI work for your team.
+            Evergreen guides on campaign governance, attribution, ROI tracking,
+            and marketing ops best practices for B2B SaaS teams.
           </p>
         </div>
       </section>
 
-      {/* Posts Grid */}
+      {/* Resources Grid */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        {posts.length === 0 ? (
+        {resources.length === 0 ? (
           <p className="text-center text-slate-400">
-            No posts published yet — check back soon.
+            No resources published yet — check back soon.
           </p>
         ) : (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+            {resources.map((resource) => (
+              <ResourceCard key={resource.slug} resource={resource} />
             ))}
           </div>
         )}

@@ -1,17 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPostBySlug, getAllSlugs, formatDate } from "@/lib/posts";
+import { getResourceBySlug, getAllResourceSlugs, formatResourceDate } from "@/lib/resources";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { DemoCTA } from "@/components/demo-cta";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  const slugs = await getAllSlugs();
+  const slugs = await getAllResourceSlugs();
   return slugs;
 }
 
@@ -19,26 +18,26 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const resource = await getResourceBySlug(slug);
 
-  if (!post) {
+  if (!resource) {
     return {
-      title: "Post Not Found — CampaignAgent",
+      title: "Resource Not Found — CampaignAgent",
     };
   }
 
   return {
-    title: `${post.title} — CampaignAgent Blog`,
-    description: post.description,
+    title: `${resource.title} — CampaignAgent Resources`,
+    description: resource.description,
     alternates: {
-      canonical: `https://campaignagent.app/blog/${slug}`,
+      canonical: `https://campaignagent.app/resources/${slug}`,
     },
     openGraph: {
-      title: post.title,
-      description: post.description,
-      url: `https://campaignagent.app/blog/${slug}`,
+      title: resource.title,
+      description: resource.description,
+      url: `https://campaignagent.app/resources/${slug}`,
       type: "article",
-      publishedTime: post.date,
+      publishedTime: resource.date,
       images: [
         {
           url: "https://campaignagent.app/og-image.jpg",
@@ -49,34 +48,34 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: post.description,
+      title: resource.title,
+      description: resource.description,
       images: ["https://campaignagent.app/og-image.jpg"],
     },
   };
 }
 
-export default async function BlogPostPage({ params }: PageProps) {
+export default async function ResourcePage({ params }: PageProps) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const resource = await getResourceBySlug(slug);
 
-  if (!post) {
+  if (!resource) {
     notFound();
   }
 
-  const formattedDate = await formatDate(post.date);
+  const formattedDate = await formatResourceDate(resource.date);
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    url: `https://campaignagent.app/blog/${slug}`,
-    datePublished: post.date,
-    dateModified: post.date,
+    headline: resource.title,
+    description: resource.description,
+    url: `https://campaignagent.app/resources/${slug}`,
+    datePublished: resource.date,
+    dateModified: resource.date,
     author: {
       "@type": "Person",
-      name: post.author,
+      name: resource.author,
       url: "https://campaignagent.app/about",
       jobTitle: "Founder & CEO, CampaignAgent",
     },
@@ -85,7 +84,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       name: "CampaignAgent",
       url: "https://campaignagent.app",
     },
-    keywords: post.tags.join(", "),
+    keywords: resource.category,
   };
 
   const breadcrumbSchema = {
@@ -101,14 +100,14 @@ export default async function BlogPostPage({ params }: PageProps) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Blog",
-        item: "https://campaignagent.app/blog",
+        name: "Resources",
+        item: "https://campaignagent.app/resources",
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: post.title,
-        item: `https://campaignagent.app/blog/${slug}`,
+        name: resource.title,
+        item: `https://campaignagent.app/resources/${slug}`,
       },
     ],
   };
@@ -127,7 +126,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="min-h-screen bg-white">
         <Navbar />
 
-        {/* Post Header */}
+        {/* Resource Header */}
         <section className="border-b border-slate-200 bg-slate-50 py-16">
           <div className="mx-auto max-w-3xl px-6">
             {/* Breadcrumb */}
@@ -137,41 +136,34 @@ export default async function BlogPostPage({ params }: PageProps) {
               </Link>
               <span className="mx-2">/</span>
               <Link
-                href="/blog"
+                href="/resources"
                 className="hover:text-indigo-600 transition-colors"
               >
-                Blog
+                Resources
               </Link>
               <span className="mx-2">/</span>
               <span className="text-slate-600">
-                {post.title.length > 40
-                  ? `${post.title.slice(0, 40)}...`
-                  : post.title}
+                {resource.title.length > 40
+                  ? `${resource.title.slice(0, 40)}...`
+                  : resource.title}
               </span>
             </nav>
 
-            {/* Tags */}
-            {post.tags.length > 0 && (
-              <div className="mb-4 flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs text-indigo-600"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
+            {/* Category */}
+            <div className="mb-4">
+              <span className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs text-indigo-600">
+                {resource.category}
+              </span>
+            </div>
 
             {/* Title */}
             <h1 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
-              {post.title}
+              {resource.title}
             </h1>
 
             {/* Meta */}
             <p className="mt-4 text-sm text-slate-500">
-              {post.author} · {formattedDate} · {post.readTime} min read
+              {resource.author} · {formattedDate} · {resource.readTime} min read
             </p>
           </div>
         </section>
@@ -180,7 +172,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <article className="mx-auto max-w-3xl px-6 py-16">
           <div
             className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-h2:mt-12 prose-h2:mb-4 prose-h2:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-p:text-slate-600 prose-p:leading-relaxed prose-a:text-indigo-600 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-indigo-400 prose-blockquote:bg-indigo-50 prose-blockquote:rounded-r-lg prose-blockquote:py-1 prose-code:text-indigo-700 prose-code:bg-indigo-50 prose-code:px-1 prose-code:rounded prose-code:before:content-none prose-code:after:content-none"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml || "" }}
+            dangerouslySetInnerHTML={{ __html: resource.contentHtml || "" }}
           />
         </article>
 
@@ -191,7 +183,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               MM
             </div>
             <div>
-              <p className="font-semibold text-slate-900">{post.author}</p>
+              <p className="font-semibold text-slate-900">{resource.author}</p>
               <p className="mt-1 text-sm text-slate-500">
                 Founder & CEO of CampaignAgent. 15 years of B2B GTM experience
                 across Intel, Cloudflare, Cloudera, Exabeam, SADA, and Procore.
@@ -200,17 +192,30 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           <Link
-            href="/blog"
+            href="/resources"
             className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-indigo-600 transition-all hover:gap-2"
           >
-            ← Back to Blog
+            ← Back to Resources
           </Link>
         </section>
 
-        <DemoCTA
-          heading="See how CampaignAgent works for your team"
-          subheading="14-day pilot, full onboarding, no credit card required."
-        />
+        {/* CTA */}
+        <section className="bg-indigo-600 py-16 text-center">
+          <div className="mx-auto max-w-4xl px-6">
+            <h2 className="text-3xl font-bold text-white">
+              See how CampaignAgent works for your team
+            </h2>
+            <p className="mt-4 text-lg text-indigo-200">
+              14-day pilot, full onboarding, no credit card required.
+            </p>
+            <Link
+              href="/#cta"
+              className="mt-8 inline-block rounded-lg bg-white px-8 py-3 font-semibold text-indigo-600 transition hover:bg-indigo-50"
+            >
+              Apply for a Pilot →
+            </Link>
+          </div>
+        </section>
 
         <Footer />
       </div>
