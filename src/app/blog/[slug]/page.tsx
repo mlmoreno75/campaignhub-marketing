@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getPostBySlug, getAllSlugs, formatDate } from "@/lib/posts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { DemoCTA } from "@/components/demo-cta";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -206,23 +207,10 @@ export default async function BlogPostPage({ params }: PageProps) {
           </Link>
         </section>
 
-        {/* CTA */}
-        <section className="bg-indigo-600 py-16 text-center">
-          <div className="mx-auto max-w-4xl px-6">
-            <h2 className="text-3xl font-bold text-white">
-              See how CampaignAgent works for your team
-            </h2>
-            <p className="mt-4 text-lg text-indigo-200">
-              14-day pilot, full onboarding, no credit card required.
-            </p>
-            <Link
-              href="/#cta"
-              className="mt-8 inline-block rounded-lg bg-white px-8 py-3 font-semibold text-indigo-600 transition hover:bg-indigo-50"
-            >
-              Request a Demo →
-            </Link>
-          </div>
-        </section>
+        <DemoCTA
+          heading="See how CampaignAgent works for your team"
+          subheading="14-day pilot, full onboarding, no credit card required."
+        />
 
         <Footer />
       </div>
