@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "CampaignAgent — AI-Powered Marketing Campaign Intelligence",
   description:
     "Plan, approve, and optimize B2B marketing campaigns with AI-powered intelligence. Built for CMOs and marketing ops teams.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   alternates: {
     canonical: "https://campaignagent.app",
   },
