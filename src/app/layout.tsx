@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "Plan, approve, and optimize B2B marketing campaigns with AI-powered intelligence. Built for CMOs and marketing ops teams.",
   icons: {
     icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   alternates: {
     canonical: "https://campaignagent.app",
