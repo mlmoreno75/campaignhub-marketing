@@ -5,6 +5,7 @@ import { ContactModal } from "@/components/contact-modal";
 
 const footerLinks = [
   { label: "About", href: "/about" },
+  { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
