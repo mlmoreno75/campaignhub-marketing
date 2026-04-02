@@ -56,6 +56,64 @@ export async function generateMetadata({
   };
 }
 
+// Helper function to extract FAQ content from HTML
+function extractFAQs(
+  contentHtml: string
+): { question: string; answer: string }[] {
+  const faqs: { question: string; answer: string }[] = [];
+
+  // Look for FAQ section - find "Frequently Asked Questions" heading
+  const faqSectionMatch = contentHtml.match(
+    /<h2[^>]*>.*?Frequently Asked Questions.*?<\/h2>([\s\S]*?)(?=<h2|<hr|---|\*{3}|$)/i
+  );
+
+  if (faqSectionMatch) {
+    const faqContent = faqSectionMatch[1];
+
+    // Pattern 1: Question in bold at start of paragraph, answer follows after newline
+    // Matches: <p><strong>Question?</strong>\nAnswer text</p>
+    const pattern1 =
+      /<p><strong>([^<]+\?)<\/strong>\s*\n([\s\S]*?)<\/p>/gi;
+    let match;
+
+    while ((match = pattern1.exec(faqContent)) !== null) {
+      const question = match[1].trim();
+      const answer = match[2].replace(/<[^>]*>/g, "").trim();
+      if (question && answer) {
+        faqs.push({ question, answer });
+      }
+    }
+
+    // Pattern 2: Question and answer in same paragraph with <br> separator
+    if (faqs.length === 0) {
+      const pattern2 =
+        /<p><strong>([^<]+\?)<\/strong>\s*<br\s*\/?>\s*([\s\S]*?)<\/p>/gi;
+      while ((match = pattern2.exec(faqContent)) !== null) {
+        const question = match[1].trim();
+        const answer = match[2].replace(/<[^>]*>/g, "").trim();
+        if (question && answer) {
+          faqs.push({ question, answer });
+        }
+      }
+    }
+
+    // Pattern 3: Question and answer in separate paragraphs
+    if (faqs.length === 0) {
+      const pattern3 =
+        /<p><strong>([^<]+\?)<\/strong><\/p>\s*<p>([\s\S]*?)<\/p>/gi;
+      while ((match = pattern3.exec(faqContent)) !== null) {
+        const question = match[1].trim();
+        const answer = match[2].replace(/<[^>]*>/g, "").trim();
+        if (question && answer) {
+          faqs.push({ question, answer });
+        }
+      }
+    }
+  }
+
+  return faqs;
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -65,6 +123,9 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const formattedDate = await formatDate(post.date);
+
+  // Extract FAQs from content for schema
+  const faqs = post.contentHtml ? extractFAQs(post.contentHtml) : [];
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -113,6 +174,23 @@ export default async function BlogPostPage({ params }: PageProps) {
     ],
   };
 
+  // FAQPage schema for posts with FAQ content
+  const faqSchema =
+    faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -123,6 +201,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="min-h-screen bg-white">
         <Navbar />
