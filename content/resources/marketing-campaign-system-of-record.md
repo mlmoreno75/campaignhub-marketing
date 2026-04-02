@@ -69,4 +69,4 @@ Adopt a platform designed for campaign management that integrates with your exis
 
 CampaignAgent is purpose-built to be the system of record for marketing campaigns. It integrates with your CRM and ad platforms to provide complete campaign visibility—from planning through ROI measurement.
 
-[See CampaignAgent in action →](/request-demo)
+[See CampaignAgent in action →](/#cta)

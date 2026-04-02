@@ -35,4 +35,4 @@ A strong governance framework includes:
 
 CampaignAgent provides the system of record for campaign governance, giving CMOs and marketing ops leaders instant visibility into every campaign's status, budget, and performance—without building custom dashboards or hiring additional headcount.
 
-Ready to implement campaign governance for your team? [Request a demo](/request-demo) to see CampaignAgent in action.
+Ready to implement campaign governance for your team? [Request a demo](/#cta) to see CampaignAgent in action.

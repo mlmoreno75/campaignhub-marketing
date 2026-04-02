@@ -44,4 +44,4 @@ To get true campaign visibility in a HubSpot environment:
 
 CampaignAgent integrates directly with HubSpot to provide the campaign visibility layer that's missing—giving you daily ROI insights, approval workflows, and cross-channel performance without leaving your HubSpot data behind.
 
-[Learn more about our HubSpot integration →](/request-demo)
+[Learn more about our HubSpot integration →](/#cta)
