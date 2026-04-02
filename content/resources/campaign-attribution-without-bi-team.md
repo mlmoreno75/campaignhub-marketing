@@ -43,4 +43,4 @@ Connect campaign membership to closed-won opportunities to see which campaigns d
 
 CampaignAgent connects to your CRM and ad platforms to automatically track campaign attribution without requiring a BI team. Get daily ROI visibility across all your campaigns from a single dashboard.
 
-[See how it works →](/request-demo)
+[See how it works →](/#cta)

@@ -54,4 +54,4 @@ Use tools that automatically notify approvers and escalate when SLAs are missed.
 
 CampaignAgent includes built-in approval workflows with configurable gates, automatic notifications, and SLA tracking—so you can maintain governance without slowing down your team.
 
-[See approval workflows in action →](/request-demo)
+[See approval workflows in action →](/#cta)
