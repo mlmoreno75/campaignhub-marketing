@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us | CampaignAgent — AI-Native GTM Platform",
   description:
-    "CampaignAgent is an AI-native GTM platform built by Michael Moreno, a 15-year B2B GTM operator. A product of RevGen AI LLC, Pflugerville, Texas.",
+    "CampaignAgent was built for CMOs who need more than another analytics tool — governance, approval workflows, and attribution in one AI-powered platform.",
   alternates: {
     canonical: "https://campaignagent.app/about",
   },

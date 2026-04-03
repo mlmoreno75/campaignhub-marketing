@@ -1,7 +1,7 @@
 ---
 title: "Why Marketing Attribution Fails B2B SaaS Teams (And How to Fix It)"
 date: "2026-03-06"
-description: "Most B2B SaaS companies are flying blind on marketing ROI. Here's why traditional attribution models break down — and what CMOs are doing instead."
+description: "Traditional attribution models break down for B2B SaaS. Here's why first-touch and last-touch fail — and what CMOs are doing instead to measure real pipeline impact."
 author: "Michael Moreno"
 tags: ["marketing attribution", "B2B SaaS", "campaign governance", "marketing ROI"]
 readTime: 7

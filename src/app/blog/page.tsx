@@ -8,7 +8,7 @@ import { DemoCTA } from "@/components/demo-cta";
 export const metadata: Metadata = {
   title: "Blog — CampaignAgent",
   description:
-    "Insights on marketing campaign governance, attribution, and marketing ops for CMOs and B2B SaaS marketing teams.",
+    "Practical guidance for CMOs and marketing ops leaders on campaign governance, attribution, and making AI work for your marketing team.",
   alternates: {
     canonical: "https://campaignagent.app/blog",
   },
