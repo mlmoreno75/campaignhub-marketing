@@ -1,7 +1,7 @@
 ---
 title: "Welcome to the CampaignAgent Blog"
 date: "2026-03-06"
-description: "Introducing our new blog where we'll share insights on marketing governance, campaign attribution, and how AI is transforming B2B marketing operations."
+description: "Introducing the CampaignAgent blog — insights on marketing governance, campaign attribution, and how AI is changing B2B marketing operations."
 author: "Michael Moreno"
 tags: ["Announcement", "Marketing Ops"]
 readTime: 3

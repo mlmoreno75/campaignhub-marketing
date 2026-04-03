@@ -8,7 +8,7 @@ import { DemoCTA } from "@/components/demo-cta";
 export const metadata: Metadata = {
   title: "Resources — CampaignAgent",
   description:
-    "Evergreen guides on campaign governance, attribution, ROI tracking, and marketing ops for CMOs and B2B SaaS marketing teams.",
+    "Download frameworks, guides, and templates for marketing campaign governance and attribution — built for CMOs and marketing ops leaders at mid-market B2B SaaS companies.",
   alternates: {
     canonical: "https://campaignagent.app/resources",
   },

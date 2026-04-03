@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "CampaignAgent — AI-Powered Marketing Campaign Intelligence",
   description:
-    "Plan, approve, and optimize B2B marketing campaigns with AI-powered intelligence. Built for CMOs and marketing ops teams.",
+    "CampaignAgent is the AI-powered campaign governance platform built for CMOs. Plan, approve, and optimize B2B marketing campaigns from one command center.",
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CampaignAgent — AI-Powered Marketing Campaign Intelligence",
     description:
-      "Plan, approve, and optimize B2B marketing campaigns with AI-powered intelligence. Built for CMOs and marketing ops teams.",
+      "CampaignAgent is the AI-powered campaign governance platform built for CMOs. Plan, approve, and optimize B2B marketing campaigns from one command center.",
     type: "website",
     images: [
       {
