@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "CampaignAgent — AI-Powered Marketing Campaign Intelligence",
+  title: "Marketing Campaign Governance Platform | CampaignAgent",
   description:
     "Plan, approve, and optimize B2B marketing campaigns with AI-powered intelligence. Built for CMOs and marketing ops teams.",
   icons: {
