@@ -6,16 +6,16 @@ import { Footer } from "@/components/footer";
 import { DemoCTA } from "@/components/demo-cta";
 
 export const metadata: Metadata = {
-  title: "Resources — CampaignAgent",
+  title: "Campaign Governance Guides & Templates — CampaignAgent",
   description:
-    "Download frameworks, guides, and templates for marketing campaign governance and attribution — built for CMOs and marketing ops leaders at mid-market B2B SaaS companies.",
+    "Explore our comprehensive guides and templates designed to empower campaign teams with best practices for governance, compliance, and effective leadership.",
   alternates: {
     canonical: "https://campaignagent.app/resources",
   },
   openGraph: {
-    title: "Resources — CampaignAgent",
+    title: "Campaign Governance Guides & Templates — CampaignAgent",
     description:
-      "Evergreen guides on campaign governance, attribution, ROI tracking, and marketing ops.",
+      "Explore our comprehensive guides and templates designed to empower campaign teams with best practices for governance, compliance, and effective leadership.",
     images: [
       {
         url: "https://campaignagent.app/og-image.jpg",
@@ -100,11 +100,12 @@ export default async function ResourcesPage() {
             Resources
           </p>
           <h1 className="mt-4 text-4xl font-bold text-slate-900 sm:text-5xl">
-            Campaign Intelligence Knowledge Base
+            Campaign Governance Guides
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-500">
-            Evergreen guides on campaign governance, attribution, ROI tracking,
-            and marketing ops best practices for B2B SaaS teams.
+            Explore our comprehensive guides and templates designed to empower
+            campaign teams with best practices for governance, compliance, and
+            effective leadership.
           </p>
         </div>
       </section>
