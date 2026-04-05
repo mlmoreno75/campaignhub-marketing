@@ -69,7 +69,7 @@ And critically, they measure ROI at the campaign level, not just the channel lev
 
 If your attribution is broken, trying to fix everything at once is the wrong approach. Start with the question your CFO is most likely to ask: *which campaigns are generating pipeline, and at what cost?*
 
-Build that single view first — even if it's imperfect. A directionally correct picture of pipeline contribution by campaign is more useful than a technically sophisticated model that takes six months to build and nobody trusts.
+Build that single view first — even if it's imperfect. A directionally correct picture of pipeline contribution by campaign is more useful than a technically sophisticated model that takes six months to build and nobody trusts. You don't need a full BI team to get started — learn how to achieve [campaign attribution without a BI team](/resources/campaign-attribution-without-bi-team).
 
 From there, add governance: a lightweight process that routes that data to the people making campaign investment decisions, on a regular cadence, before the money gets spent.
 

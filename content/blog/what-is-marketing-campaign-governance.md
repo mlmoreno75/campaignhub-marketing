@@ -26,7 +26,7 @@ Gartner has gone further, predicting that by 2027, a lack of AI literacy will ra
 
 ## What a Campaign Governance Framework Actually Looks Like
 
-Campaign governance isn't a single document or a project management board. It's a system with four layers that work together.
+A [campaign governance framework](/resources/what-is-campaign-governance) isn't a single document or a project management board. It's a system with four layers that work together.
 
 ### 1. Approval Architecture
 
