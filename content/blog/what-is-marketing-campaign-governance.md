@@ -31,6 +31,8 @@ Three pressures are converging on mid-market SaaS marketing leaders.
 
 **Budgets are tight and scrutinized.** Gartner's 2026 CMO Spend Survey, covering 401 CMOs and marketing leaders, found marketing budgets at 7.8% of company revenue, and 56% of respondents said their budget cannot cover their 2026 strategy. When money is that constrained, every campaign needs a defensible rationale and a measurable outcome.
 
+A [campaign governance framework](/resources/what-is-campaign-governance) isn't a single document or a project management board. It's a system with four layers that work together.
+
 **AI is multiplying output faster than oversight.** The same Gartner survey found CMOs allocate an average of 15.3% of marketing budgets to AI, yet only 30% report mature AI readiness and 70% say their processes are not mature enough to scale AI. Gartner's Ewan McIntyre notes that many organizations invest in AI tools faster than they build the data foundations, processes, governance, and talent to support them. When a team can generate 50 campaign variants in an afternoon, the approval and brand-control process becomes the bottleneck, or worse, disappears entirely.
 
 **Consistency still drives revenue.** Lucidpress's State of Brand Consistency research (cited in Bulldog Reporter) reported that consistent branding can increase revenue by 33%, and that 81% of companies still deal with off-brand content. The data is several years old, so treat the exact figures as directional, but the finding matches what I have seen in practice: inconsistency is common and it is expensive.

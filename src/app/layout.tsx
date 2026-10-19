@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://campaignagent.app",
   },
   openGraph: {
-    title: "CampaignAgent — AI-Powered Marketing Campaign Intelligence",
+    title: "Marketing Campaign Governance Platform | CampaignAgent",
     description:
       "CampaignAgent is the AI-powered campaign governance platform built for CMOs. Plan, approve, and optimize B2B marketing campaigns from one command center.",
     type: "website",
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Marketing Campaign Governance Platform | CampaignAgent",
     images: ["https://campaignagent.app/og-image.jpg"],
   },
 };

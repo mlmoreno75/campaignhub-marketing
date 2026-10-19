@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import { DemoCTA } from "@/components/demo-cta";
 
 export const metadata: Metadata = {
-  title: "Blog — CampaignAgent",
+  title: "Marketing Governance & Attribution Blog | CampaignAgent",
   description:
     "Practical guidance for CMOs and marketing ops leaders on campaign governance, attribution, and making AI work for your marketing team.",
   alternates: {

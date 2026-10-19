@@ -8,14 +8,14 @@ import { DemoCTA } from "@/components/demo-cta";
 export const metadata: Metadata = {
   title: "Campaign Governance Guides & Templates — CampaignAgent",
   description:
-    "Explore our comprehensive guides and templates designed to empower campaign teams with best practices for governance, compliance, and effective leadership.",
+    "Download frameworks, guides, and templates for marketing campaign governance and attribution — built for CMOs and marketing ops leaders at mid-market B2B SaaS companies.",
   alternates: {
     canonical: "https://campaignagent.app/resources",
   },
   openGraph: {
     title: "Campaign Governance Guides & Templates — CampaignAgent",
     description:
-      "Explore our comprehensive guides and templates designed to empower campaign teams with best practices for governance, compliance, and effective leadership.",
+      "Download frameworks, guides, and templates for marketing campaign governance and attribution — built for CMOs and marketing ops leaders at mid-market B2B SaaS companies.",
     images: [
       {
         url: "https://campaignagent.app/og-image.jpg",
